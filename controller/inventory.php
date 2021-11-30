@@ -11,7 +11,8 @@ if ($action == "store") {
     $inventory->store(
         $_POST['name'],
         $_POST['stock'],
-        $_POST['expired_at']
+        $_POST['expired_at'],
+        $_POST['id']
     );
     return header("location:../");
 }
