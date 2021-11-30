@@ -38,7 +38,7 @@
                                 <th scope="col ">Expired At</th>
                                 <th scope="col ">Created At</th>
                                 <th scope="col ">Updated At</th>
-                                <th scope="col ">User</th>
+                                <th scope="col ">User ID</th>
                                 <th scope="col ">Action</th>
                             </tr>
                         </thead>
