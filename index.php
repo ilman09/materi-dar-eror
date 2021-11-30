@@ -24,7 +24,7 @@
         <div class="container mt-5">
             <div class="row mb-4">
                 <div class="col-12">
-                    <h3 class="mb-4">Halo, <?= $_SESSION['name'] ?></h5>
+                    <h3 class="mb-4">Halo, <?= $_SESSION['name']  ?></h5>
                     <p><a href="create.php">tambah produk</a></p>
                     <p><a href="logout.php">jangan lupa logout</a></p>
 
@@ -43,7 +43,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($data->getAll() as $item) { ?>
+                            <?php 
+                            $id=$_SESSION['id'];
+                            foreach($data->getAll($id) as $item) { ?>
                             <tr>
                                 <td><?= $item['name'] ?></td>
                                 <td><?= $item['stock'] ?></td>
@@ -60,6 +62,7 @@
                                             <button type="submit" class="btn btn-danger text-white">
                                                 <i class="bx bx-trash"></i>
                                             </button>
+                                            
                                         </form>
                                     </div>
                                 </td>
