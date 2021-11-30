@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,14 +11,15 @@
     <main role="main " class="container">
         
         <?php include('welcome_message.php') ?>
+        <?php $id=$_SESSION['id'] ?>
 
         <div class="container mt-5">
             <div class="row mb-4">
                 <div class="col-12">
                     <h5 class="mb-4">Create Inventory</h5>
                     <form action="controller/inventory.php?action=store" method="POST">
-                        
-                          <div class="mb-3">          
+
+                    <div class="mb-3">          
                             <input type="hidden" class="form-control" value=<?php echo $id;?> name="id">
                         </div>
 
