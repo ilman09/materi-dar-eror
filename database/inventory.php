@@ -8,8 +8,8 @@
             $this->database = new ConnectionDatabase();
         }
 
-        function getAll(){
-            $query = "SELECT * FROM inventory WHERE deleted_at IS NULL";
+        function getAll($id){
+            $query = "SELECT * FROM inventory WHERE add_by= $id and deleted_at IS NULL";
             $data = mysqli_query($this->database->connection, $query);
             
             $res = [];
@@ -23,13 +23,14 @@
             return $res;
         }
 
-        function store($name, $stock, $expired_at){
-            $query = "INSERT INTO `inventory` (`name`, `stock`, `expired_at`) VALUES (?,?,?)";
-
+        function store($name, $stock, $expired_at,$id){
+            $query = "INSERT INTO `inventory` (`name`, `stock`, `expired_at`,add_by) VALUES (?,?,?,?)";
+            // echo $query;
+            // exit();
             $process = $this->database->connection->prepare($query);
 
             if($process) {
-                $process->bind_param('sss', $name, $stock, $expired_at);
+                $process->bind_param('ssss', $name, $stock, $expired_at,$id);
                 $process->execute();
             } else {
                 $error = $this->database->connection->errno . ' ' . $this->database->connection->error;
