@@ -16,6 +16,11 @@
                 <div class="col-12">
                     <h5 class="mb-4">Create Inventory</h5>
                     <form action="controller/inventory.php?action=store" method="POST">
+                        
+                          <div class="mb-3">          
+                            <input type="hidden" class="form-control" value=<?php echo $id;?> name="id">
+                        </div>
+
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Product Name</label>
                             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Input product name" name="name">
