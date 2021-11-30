@@ -25,6 +25,8 @@
             <div class="row mb-4">
                 <div class="col-12">
                     <h3 class="mb-4">Halo, <?= $_SESSION['name'] ?></h5>
+                    <p><a href="create.php">tambah produk</a></p>
+                    <p><a href="logout.php">jangan lupa logout</a></p>
 
                     <h5 class="mb-4">List of Product</h5>
 
@@ -36,6 +38,7 @@
                                 <th scope="col ">Expired At</th>
                                 <th scope="col ">Created At</th>
                                 <th scope="col ">Updated At</th>
+                                <th scope="col ">User</th>
                                 <th scope="col ">Action</th>
                             </tr>
                         </thead>
@@ -47,6 +50,7 @@
                                 <td><?= $item['expired_at'] ?></td>
                                 <td><?= $item['created_at'] ?></td>
                                 <td><?= $item['updated_at'] ?></td>
+                                <td><?= $item['add_by'] ?></td>
                                 <td>
                                     <div class="btn-group " role="group " aria-label="Basic example ">
                                         <a href="edit.php?id=<?= $item['id'] ?>" class="btn btn-info text-white ">
